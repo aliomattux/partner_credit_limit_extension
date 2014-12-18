@@ -1,0 +1,36 @@
+<openerp>
+    <data>
+
+         <act_window name="Update Limit"
+            res_model="partner.credit.limit.wizard"
+            src_model="res.partner"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            multi="True"
+            id="action_update_credit_limit"/>
+
+
+        <record id="change_credit_limit_wizard" model="ir.ui.view">
+            <field name="name">Change Credit Limit</field>
+            <field name="model">partner.credit.limit.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+			<field name="original_amount" invisible="1" />
+			<field name="amount" />
+                    </group>
+		    <newline/>
+		    <group>
+			<field name="adjustment_note" />
+		    </group>
+		    <newline/>
+		    <group>
+			<button name="submit_change" type="object" string="Submit" />
+		    </group>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>
