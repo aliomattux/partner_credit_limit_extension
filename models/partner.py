@@ -4,7 +4,7 @@ from openerp.osv import osv, fields
 class ResPartner(osv.osv):
     _inherit = 'res.partner'
     _columns = {
-	'credit_history': fields.one2many('res.partner.credit.history', 'partner', 'Credit History'),
+	'credit_history': fields.one2many('res.partner.credit.history', 'partner', 'Credit History', copy=False),
     }
 
 
